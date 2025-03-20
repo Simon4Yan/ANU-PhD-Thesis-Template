@@ -1,0 +1,247 @@
+\documentclass[11pt, a4paper]{book}
+\usepackage{svn-multi}
+\svnid{$Id$}
+%\usepackage{prelim2e}
+%%\renewcommand{\PrelimWords}{Draft Copy \svnkw{Id}}
+%\newcommand*{\mysvnrev}{\svnrev}
+\usepackage[hyperindex=true,
+			bookmarks=true,
+            pdftitle={}, pdfauthor={Weijian Deng},
+            colorlinks=true,
+            linkcolor=red,
+            pdfborder=0,
+            pagebackref=false,
+            citecolor=blue,
+            plainpages=false,
+            pdfpagelabels,
+            pagebackref=true,
+            hyperfootnotes=false]{hyperref}
+
+
+\usepackage[all]{hypcap}
+\usepackage[palatino]{anuthesis}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{thesis}
+\usepackage[square]{natbib}
+\usepackage[normalem]{ulem}
+\usepackage[table]{xcolor}
+\usepackage{makeidx}
+\usepackage{cleveref}
+\usepackage[]{caption2}
+% \usepackage{caption}
+
+\usepackage{float}
+\urlstyle{sf}
+\renewcommand{\sfdefault}{uop}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{beramono}
+% For theorems and such
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{gensymb}
+
+\usepackage{enumitem}
+
+\usepackage{multirow}
+\usepackage{etoolbox}
+
+\usepackage{makecell}
+
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{
+  \ifcase #1 %
+    %
+  \or
+    (cited on page #2)%
+  \else
+    (cited on pages #2)%
+  \fi
+}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+
+\input{macros}            
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{math_commands.tex}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\def\etal{\emph{et al. }}
+\def\ie{\emph{i.e.}}
+\def\eg{\emph{e.g.}}
+\def\etc{\emph{etc}}
+\def\supp{\text{supp}}
+\def\st{{\mathrm{s.t.}}}
+
+% \usepackage[table,dvipsnames]{xcolor}
+\definecolor{line1}{gray}{1.0}
+\definecolor{line2}{gray}{1.0}
+\definecolor{weijian}{gray}{.9}
+\definecolor{mygray}{gray}{.95}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+
+\newcommand{\dist}{\ensuremath{\mathcal{D}}}
+\newcommand{\fhat}{\ensuremath{\hat{f}}}
+\newcommand{\ermloss}{\ensuremath{L}}
+\newcommand{\Eop}{\ensuremath{\mathop{\mathbb{E}}}}
+% \newcommand{\E}{\Eop}
+% \newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\N}{\ensuremath{\mathcal{N}}}
+\newcommand{\prob}{\ensuremath{\mathbb{P}}}
+\newcommand{\Dtest}{\ensuremath{S}}
+\newcommand{\D}[1]{\ensuremath{D_{\text{#1}}}}
+\newcommand{\ind}{\ensuremath{\mathbb{I}}}
+\newcommand{\accorig}{\ensuremath{\text{acc}_\text{orig}}}
+\newcommand{\accnew}{\ensuremath{\text{acc}_\text{new}}}
+\newcommand{\acc}{\ensuremath{\text{acc}}}
+
+\newcommand{\keyword}[1]{\texttt{#1}}
+\newcommand{\model}[1]{\texttt{#1}}
+\newcommand{\class}[1]{\texttt{#1}}
+\newcommand{\airplane}{\class{airplane}}
+
+\newcommand{\dataseta}{\textsf{Threshold0.7}}
+\newcommand{\datasetb}{\textsf{MatchedFrequency}}
+\newcommand{\datasetc}{\textsf{TopImages}}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\parens}{\lparen}{\rparen}
+\DeclarePairedDelimiter{\brackets}{[}{]}
+\DeclarePairedDelimiter{\ip}{\langle}{\rangle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Preamble
+\title{TITLE}
+\author{YOURNAME}
+\date{\today}
+
+\renewcommand{\thepage}{\roman{page}}
+
+\makeindex
+\begin{document}
+
+%----------------------------------------------------------
+% % this is for adding footnote after algorithm
+% \makeatletter
+% \AfterEndEnvironment{algorithm}{\let\@algcomment\relax}
+% \AtEndEnvironment{algorithm}{\kern2pt\hrule\relax\vskip3pt\@algcomment}
+% \let\@algcomment\relax
+% \newcommand\algcomment[1]{\def\@algcomment{\footnotesize#1}}
+% \renewcommand\fs@ruled{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@ruled
+%   \def\@fs@pre{\hrule height.8pt depth0pt \kern2pt}%
+%   \def\@fs@post{}%
+%   \def\@fs@mid{\kern2pt\hrule\kern2pt}%
+%   \let\@fs@iftopcapt\iftrue}
+% \makeatother
+% %----------------------------------------------------------
+
+%----------------------------------------------------------
+% % define pseudo-code style
+% \lstset{
+%   backgroundcolor=\color{white},
+%   basicstyle=\fontsize{11pt}{11pt}\ttfamily\selectfont,
+%   columns=fullflexible,
+%   breaklines=true,
+%   captionpos=b,
+%   commentstyle=\fontsize{11pt}{11pt}\color{codeblue},
+%   keywordstyle=\fontsize{11pt}{11pt}\color{codekw},
+% }
+% %----------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title page
+\pagestyle{empty}
+\thispagestyle{empty}
+\input{foreword/titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here begin the preliminaries
+\input{foreword/frontmatter}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here begin the preliminaries
+\input{foreword/tomessage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Acknowledgements
+% \cleardoublepage
+% \pagestyle{empty}
+% \input{foreword/ack}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Abstract
+\cleardoublepage
+\pagestyle{headings}
+\input{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Table of contents
+\hypersetup{linkcolor = black}
+\cleardoublepage
+\pagestyle{headings}
+\setcounter{tocdepth}{2}
+\markboth{Contents}{Contents}
+\tableofcontents
+\hypersetup{linkcolor = black,colorlinks=true}
+\listoffigures
+\listoftables
+
+\hypersetup{linkcolor = red,colorlinks=true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here begins the main text
+\mainmatter
+
+%% Chapters
+\input{chapter1/intro}
+\input{chapter2/main}
+% \input{chapter3/main}
+% \input{chapter4/main}
+% \input{chapter5/main}
+% \input{chapter6/main}
+\input{conclusion}
+\input{appendix/main}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Here begins the end matter
+
+%%\input{appendix}
+
+\backmatter
+
+
+\bibliographystyle{anuthesis}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{thesis}
+
+\printindex
+
+\end{document}
